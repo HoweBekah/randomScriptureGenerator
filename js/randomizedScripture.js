@@ -1,6 +1,6 @@
 //Book of Mormon JSON data pull
 var requestURL =
-  "https://github.com/HoweBekah/randomScriptureGenerator/blob/master/standardworks.json";
+  "https://github.com/HoweBekah/randomScriptureGenerator/standardworks.json";
 var request = new XMLHttpRequest();
 request.open("GET", requestURL);
 request.responseType = "text";
@@ -16,7 +16,7 @@ request.onload = function () {
   randomGP(scriptureData);
   randomAll(scriptureData);
 };
-//console.log(scriptureData);
+console.log(scriptureData);
 function randomBom(bomData) {
   var boms = jObj["works"];
 
