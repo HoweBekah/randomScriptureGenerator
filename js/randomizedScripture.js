@@ -119,7 +119,7 @@ function randomAll() {
   var scriptureData = JSON.parse(scriptureText);
   console.log(scriptureData);
   var ranBook = Math.floor(Math.random() * 5);
-  var scripts = scriptureData.works[1];
+  var scripts = scriptureData.works[ranBook];
 
   // console.log(bookLength);
   if (section.firstChild) {
