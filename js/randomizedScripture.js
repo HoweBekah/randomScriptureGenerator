@@ -82,7 +82,7 @@ function randomDC() {
   var scriptureData = JSON.parse(scriptureText);
   console.log(scriptureData);
   var scripts = scriptureData.works[1];
-  var ranBook = Math.floor(Math.random() * (scripts.dandc.sections.length - 1));
+  var ranBook = Math.floor(Math.random() * (scripts.sections.length - 1));
   // var bookLength = scripts.ot[ranBook].chapters.length - 1;
   // var ranChap = Math.floor(Math.random() * bookLength);
 
@@ -91,7 +91,7 @@ function randomDC() {
     section.removeChild(section.firstChild);
   }
   var test = document.createElement("h2");
-  test.textContent = "Read " + scripts.dandc.sections[ranBook].reference;
+  test.textContent = "Read " + scripts.sections[ranBook].reference;
   section.appendChild(test);
 }
 function randomGP() {
@@ -119,7 +119,7 @@ function randomAll() {
   var scriptureData = JSON.parse(scriptureText);
   console.log(scriptureData);
   var ranBook = Math.floor(Math.random() * 5);
-  var scripts = scriptureData.works[0];
+  var scripts = scriptureData.works[1];
 
   // console.log(bookLength);
   if (section.firstChild) {
