@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
     <title>Scripture Chapter Generator</title>
   </head>
   <body>
@@ -10,14 +11,39 @@
       <h1>Scripture Chapter Generator</h1>
     </header>
     <main>
-      <button type="button" onclick="randomBom()">The Book of Mormon</button>
-      <button type="button" onclick="randomOldT()">Old Testament</button>
-      <button type="button" onclick="randomNewT()">New Testament</button>
-      <button type="button" onclick="randomDC()">Doctrine and Covenants</button>
-      <button type="button" onclick="randomGP()">Pearl of Great Price</button>
-      <button type="button" onclick="randomAll()">Standard Works</button>
-      <div id="titlebook"></div>
-      <section id="readThis"></section>
+      <div id="bookMormon" class="mainDivs">
+        <button type="button" onclick="randomBom()" class="bookButtons">
+          The Book of Mormon
+        </button>
+      </div>
+      <div id="DandC" class="mainDivs">
+        <button type="button" onclick="randomDC()" class="bookButtons">
+          Doctrine and Covenants
+        </button>
+      </div>
+      <div id="oldT" class="mainDivs">
+        <button type="button" onclick="randomOldT()" class="bookButtons">
+          Old Testament
+        </button>
+      </div>
+      <div id="newT" class="mainDivs">
+        <button type="button" onclick="randomNewT()" class="bookButtons">
+          New Testament
+        </button>
+      </div>
+      <div id="pearlG" class="mainDivs">
+        <button type="button" onclick="randomGP()" class="bookButtons">
+          Pearl of Great Price
+        </button>
+      </div>
+      <br />
+      <h3 id="question">Can't decide on a book to read from?</h3>
+
+      <div id="titlebook" class="mainDivs">
+        <button type="button" onclick="randomAll()" id="allBooks">
+          Standard Works
+        </button>
+      </div>
     </main>
     <footer></footer>
     <script src="js/randomizedScripture.js"></script>

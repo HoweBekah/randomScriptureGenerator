@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Roboto&display=swap");
+
+body {
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+}
+
+.allButtons {
+  font-family: "Roboto", sans-serif;
+}
+#titleDiv {
+  display: block;
+}
+
+.result {
+  margin: 0;
+  padding-top: 0.45em;
+}
+
+.mainDivs {
+  margin: 1em;
+}
+.buttons {
+  padding: 0;
+}
+main {
+  text-align: center;
+}
+#question {
+  margin-top: 0;
+}

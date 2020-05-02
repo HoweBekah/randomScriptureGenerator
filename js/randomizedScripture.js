@@ -1,4 +1,10 @@
 var section = document.querySelector("section");
+var titleDiv = document.getElementById("titlebook");
+var bomDiv = document.getElementById("bookMormon");
+var dandcDiv = document.getElementById("DandC");
+var oldTDiv = document.getElementById("oldT");
+var newTDiv = document.getElementById("newT");
+var pearlDiv = document.getElementById("pearlG");
 
 //JSON data pull
 let requestURL =
@@ -16,13 +22,14 @@ function randomBom() {
   var bookLength = scripts.bom[ranBook].chapters.length - 1;
   var ranChap = Math.floor(Math.random() * bookLength);
 
-  console.log(bookLength);
-  if (section.firstChild) {
-    section.removeChild(section.firstChild);
+  if (bomDiv.firstChild) {
+    bomDiv.removeChild(bomDiv.firstChild);
+    // titleDiv.style.display = "none";
   }
-  var test = document.createElement("h3");
+  var test = document.createElement("h4");
   test.textContent = scripts.bom[ranBook].chapters[ranChap].reference;
-  section.appendChild(test);
+  test.className = "result";
+  bomDiv.appendChild(test);
 }
 
 function randomOldT() {
@@ -33,12 +40,14 @@ function randomOldT() {
   var bookLength = scripts.ot[ranBook].chapters.length - 1;
   var ranChap = Math.floor(Math.random() * bookLength);
 
-  if (section.firstChild) {
-    section.removeChild(section.firstChild);
+  if (oldTDiv.firstChild) {
+    oldTDiv.removeChild(oldTDiv.firstChild);
+    // titleDiv.style.display = "none";
   }
-  var test = document.createElement("h3");
+  var test = document.createElement("h4");
   test.textContent = scripts.ot[ranBook].chapters[ranChap].reference;
-  section.appendChild(test);
+  test.className = "result";
+  oldTDiv.appendChild(test);
 }
 function randomNewT() {
   var scriptureText = request.responseText;
@@ -48,12 +57,13 @@ function randomNewT() {
   var bookLength = scripts.nt[ranBook].chapters.length - 1;
   var ranChap = Math.floor(Math.random() * bookLength);
 
-  if (section.firstChild) {
-    section.removeChild(section.firstChild);
+  if (newTDiv.firstChild) {
+    newTDiv.removeChild(newTDiv.firstChild);
+    //titleDiv.style.display = "none";
   }
-  var test = document.createElement("h3");
+  var test = document.createElement("h4");
   test.textContent = scripts.nt[ranBook].chapters[ranChap].reference;
-  section.appendChild(test);
+  newTDiv.appendChild(test);
 }
 function randomDC() {
   var scriptureText = request.responseText;
@@ -61,12 +71,14 @@ function randomDC() {
   var scripts = scriptureData.works[1];
   var ranBook = Math.floor(Math.random() * (scripts.sections.length - 1));
 
-  if (section.firstChild) {
-    section.removeChild(section.firstChild);
+  if (dandcDiv.firstChild) {
+    dandcDiv.removeChild(dandcDiv.firstChild);
+    // titleDiv.style.display = "none";
   }
-  var test = document.createElement("h3");
+  var test = document.createElement("h4");
   test.textContent = scripts.sections[ranBook].reference;
-  section.appendChild(test);
+  test.className = "result";
+  dandcDiv.appendChild(test);
 }
 function randomGP() {
   var scriptureText = request.responseText;
@@ -76,13 +88,14 @@ function randomGP() {
   var bookLength = scripts.pogp[ranBook].chapters.length - 1;
   var ranChap = Math.floor(Math.random() * bookLength);
 
-  console.log(bookLength);
-  if (section.firstChild) {
-    section.removeChild(section.firstChild);
+  if (pearlDiv.firstChild) {
+    pearlDiv.removeChild(pearlDiv.firstChild);
+    //titleDiv.style.display = "none";
   }
-  var test = document.createElement("h3");
+  var test = document.createElement("h4");
   test.textContent = scripts.pogp[ranBook].chapters[ranChap].reference;
-  section.appendChild(test);
+  test.className = "result";
+  pearlDiv.appendChild(test);
 }
 function randomAll() {
   var scriptureText = request.responseText;
@@ -90,30 +103,36 @@ function randomAll() {
   var titleDiv = document.getElementById("titlebook");
   var ranBook = Math.floor(Math.random() * 5);
   var scripts = scriptureData.works[ranBook];
-  if (section.firstChild || titleDiv.firstChild) {
-    section.removeChild(section.firstChild);
+  if (titleDiv.firstChild) {
     titleDiv.removeChild(titleDiv.firstChild);
   }
-  var titleDiv = document.getElementById("titlebook");
-  var bookTitle = document.createElement("h2");
+  // if (titleDiv.style.display === "none") {
+  //   titleDiv.style.display = "block";
+  // }
+  var bookTitle = document.createElement("h4");
   bookTitle.textContent = scripts.title;
+  bookTitle.className = "result";
   titleDiv.appendChild(bookTitle);
-
-  switch (ranBook) {
-    case 0:
-      return randomBom();
-      break;
-    case 1:
-      return randomDC();
-      break;
-    case 2:
-      return randomNewT();
-      break;
-    case 3:
-      return randomOldT();
-      break;
-    case 4:
-      return randomGP();
-      break;
-  }
+  // if (titleDiv.style.display === "block") {
+  //   switch (ranBook) {
+  //     case 0:
+  //       randomBom();
+  //       break;
+  //     case 1:
+  //       randomDC();
+  //       break;
+  //     case 2:
+  //       randomNewT();
+  //       break;
+  //     case 3:
+  //       randomOldT();
+  //       break;
+  //     case 4:
+  //       randomGP();
+  //       break;
+  //     default:
+  //       document.getElementById("titlebook").style.display = "block";
+  //       break;
+  //   }
+  //}
 }
