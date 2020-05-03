@@ -23,10 +23,10 @@ function randomBom() {
   var ranChap = Math.floor(Math.random() * bookLength);
 
   if (bomDiv.firstChild) {
-    bomDiv.removeChild(bomDiv.firstChild);
+    bomDiv.removeChild(bomDiv.lastChild);
     // titleDiv.style.display = "none";
   }
-  var test = document.createElement("h4");
+  var test = document.createElement("h3");
   test.textContent = scripts.bom[ranBook].chapters[ranChap].reference;
   test.className = "result";
   bomDiv.appendChild(test);
@@ -41,10 +41,10 @@ function randomOldT() {
   var ranChap = Math.floor(Math.random() * bookLength);
 
   if (oldTDiv.firstChild) {
-    oldTDiv.removeChild(oldTDiv.firstChild);
+    oldTDiv.removeChild(oldTDiv.lastChild);
     // titleDiv.style.display = "none";
   }
-  var test = document.createElement("h4");
+  var test = document.createElement("h3");
   test.textContent = scripts.ot[ranBook].chapters[ranChap].reference;
   test.className = "result";
   oldTDiv.appendChild(test);
@@ -58,10 +58,10 @@ function randomNewT() {
   var ranChap = Math.floor(Math.random() * bookLength);
 
   if (newTDiv.firstChild) {
-    newTDiv.removeChild(newTDiv.firstChild);
+    newTDiv.removeChild(newTDiv.lastChild);
     //titleDiv.style.display = "none";
   }
-  var test = document.createElement("h4");
+  var test = document.createElement("h3");
   test.textContent = scripts.nt[ranBook].chapters[ranChap].reference;
   newTDiv.appendChild(test);
 }
@@ -72,10 +72,10 @@ function randomDC() {
   var ranBook = Math.floor(Math.random() * (scripts.sections.length - 1));
 
   if (dandcDiv.firstChild) {
-    dandcDiv.removeChild(dandcDiv.firstChild);
+    dandcDiv.removeChild(dandcDiv.lastChild);
     // titleDiv.style.display = "none";
   }
-  var test = document.createElement("h4");
+  var test = document.createElement("h3");
   test.textContent = scripts.sections[ranBook].reference;
   test.className = "result";
   dandcDiv.appendChild(test);
@@ -89,10 +89,10 @@ function randomGP() {
   var ranChap = Math.floor(Math.random() * bookLength);
 
   if (pearlDiv.firstChild) {
-    pearlDiv.removeChild(pearlDiv.firstChild);
+    pearlDiv.removeChild(pearlDiv.lastChild);
     //titleDiv.style.display = "none";
   }
-  var test = document.createElement("h4");
+  var test = document.createElement("h3");
   test.textContent = scripts.pogp[ranBook].chapters[ranChap].reference;
   test.className = "result";
   pearlDiv.appendChild(test);
@@ -104,12 +104,12 @@ function randomAll() {
   var ranBook = Math.floor(Math.random() * 5);
   var scripts = scriptureData.works[ranBook];
   if (titleDiv.firstChild) {
-    titleDiv.removeChild(titleDiv.firstChild);
+    titleDiv.removeChild(titleDiv.lastChild);
   }
   // if (titleDiv.style.display === "none") {
   //   titleDiv.style.display = "block";
   // }
-  var bookTitle = document.createElement("h4");
+  var bookTitle = document.createElement("h2");
   bookTitle.textContent = scripts.title;
   bookTitle.className = "result";
   titleDiv.appendChild(bookTitle);
