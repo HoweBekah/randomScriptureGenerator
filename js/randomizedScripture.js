@@ -63,6 +63,7 @@ function randomNewT() {
   }
   var test = document.createElement("h3");
   test.textContent = scripts.nt[ranBook].chapters[ranChap].reference;
+  test.className = "result";
   newTDiv.appendChild(test);
 }
 function randomDC() {
